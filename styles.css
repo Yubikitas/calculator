@@ -1,0 +1,71 @@
+body{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 300px; 
+}
+
+
+#calcDisplay {
+    width: 320px; 
+    height: 140px; 
+    background-color: lightgrey;
+    box-sizing: border-box; 
+    border: solid;  
+    border-color:black; 
+    border-top-width: 30px; 
+    border-bottom-width: 20px;
+    border-left-width: 15px;
+    border-right-width: 15px;
+}
+
+#calcArea{
+    display: flex; 
+    flex-direction: column; 
+    width: 320px; 
+    height: 400px; 
+}
+
+.calcButtons{
+    display: flex; 
+    width: 320px; 
+    height: auto; 
+}
+
+#calcNumberButtons{
+    display: flex; 
+    flex-wrap: wrap; 
+    width: 192px; 
+    height: 50px;
+}
+
+#calcNumberButtons button{
+    width: 64px; 
+    height: 64px; 
+    font-size: 22px; 
+    background-color:  grey; 
+    color: white; 
+}
+
+#calcOperateButtons{
+    display: flex; 
+    height: 50px; 
+    width: 128px; 
+    flex-wrap: wrap; 
+
+}
+
+#calcOperateButtons button{
+    width: 64px; 
+    height: 64px; 
+    font-size: 22px; 
+    font-style: bold; 
+    background-color: grey;
+    color: rgb(255, 208, 0); 
+    padding: 5px 
+}
+
+#calcOperateButtons #equal{
+    width: 128px; 
+    height: 64px; 
+}
