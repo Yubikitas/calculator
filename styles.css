@@ -2,12 +2,12 @@ body{
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    margin-top: 300px; 
+    margin-top: 200px; 
 }
 
 
 #calcDisplay {
-    width: 320px; 
+    width: 400px; 
     height: 140px; 
     background-color: lightgrey;
     box-sizing: border-box; 
@@ -17,6 +17,9 @@ body{
     border-bottom-width: 20px;
     border-left-width: 15px;
     border-right-width: 15px;
+    font-size: 70px; 
+    text-align: right; 
+    padding: 10px; 
 }
 
 #calcArea{
@@ -28,44 +31,45 @@ body{
 
 .calcButtons{
     display: flex; 
-    width: 320px; 
+    width: 400px; 
     height: auto; 
 }
 
 #calcNumberButtons{
     display: flex; 
     flex-wrap: wrap; 
-    width: 192px; 
-    height: 50px;
+    width: 240px; 
+    height: 256px;
 }
 
 #calcNumberButtons button{
-    width: 64px; 
-    height: 64px; 
+    width: 80px; 
+    height: 80px; 
     font-size: 22px; 
     background-color:  grey; 
     color: white; 
+    font-style: bold;
 }
 
 #calcOperateButtons{
     display: flex; 
-    height: 50px; 
-    width: 128px; 
+    height: 320px; 
+    width: 160px; 
     flex-wrap: wrap; 
 
 }
 
 #calcOperateButtons button{
-    width: 64px; 
-    height: 64px; 
+    width: 80px; 
+    height: 80px; 
     font-size: 22px; 
     font-style: bold; 
     background-color: grey;
-    color: rgb(255, 208, 0); 
+    color: gold; 
     padding: 5px 
 }
 
 #calcOperateButtons #equal{
-    width: 128px; 
-    height: 64px; 
+    width: 160px; 
+    height: 80px; 
 }
