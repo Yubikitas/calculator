@@ -1,3 +1,10 @@
+//to do 
+//display number overflow (replicate by dividing) - rounding of answers 
+//divide by zero alert 
+// disable more than one floating point 
+//undo button 
+//key listener 
+
 let num1 = []; 
 let numForArg = 0;
 let numForArg2= 0;  
@@ -26,9 +33,6 @@ function operate(arg1,arg2,operand){
 
     input1 = Number(arg1);  
     input2 = Number(arg2);  
-
- 
-
 
     if (operand=="plus"){
         return addNum(input1,input2)
@@ -100,12 +104,22 @@ getNum.addEventListener("click",(e)=>{
                 num1.push(0);  
                 displayNumber.textContent = num1.join(""); 
             }
+
+        else if (target.id=="point"){
+
+            num1.push("."); 
+            displayNumber.textContent = num1.join(""); 
+        }
         }); 
 
     let clearNum = document.querySelector("#clear"); 
     clearNum.addEventListener("click",(e)=>{
         displayNumber.textContent = "0"; 
         num1.splice(0,num1.length); 
+        numForArg = 0; 
+        numForArg2 = 0; 
+        displayNum = 0; 
+        operand = ""
     }); 
 
     let getOperand = document.querySelector("#calcOperateButtons"); 
@@ -137,12 +151,23 @@ getNum.addEventListener("click",(e)=>{
             break; 
 
             case"equal": 
-            numForArg2 = num1.slice().join(""); 
-            displayNum = operate(numForArg,numForArg2,operand); 
-            console.log(displayNum); 
-            displayNumber.textContent = displayNum; 
+                if (displayNum==0){
+                    numForArg2 = num1.slice().join("");
+                    displayNum = operate(numForArg,numForArg2,operand); 
+                    numForArg = 0; 
+                    numForArg2 = 0; 
+                    num1.splice(0,num1.length); 
+                    displayNumber.textContent = displayNum;
+                }
+                else if (displayNum!=0){
+                    numForArg2 = num1.slice().join("");
+                    num1.splice(0,num1.length); 
+                    console.log(displayNum); 
+                    displayNum = operate(displayNum,numForArg2,operand)
+                    displayNumber.textContent = displayNum; 
 
-    
+                }
+
         }}); 
 
             
