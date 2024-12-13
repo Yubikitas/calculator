@@ -1,6 +1,6 @@
 //to do 
+//evaluate on operand press 
 //operand toggle
-//undo button 
 
 
 let num1 = []; 
@@ -128,13 +128,6 @@ getNum.addEventListener("click",(e)=>{
         operand = ""
     }); 
 
-
-    var plusButton = document.querySelector("#plus")
-    var minusButton = document.querySelector("#minus")
-    var multButton = document.querySelector("#multiply")
-    var divButton = document.querySelector("divide");
-
-    
     let getOperand = document.querySelector("#calcOperateButtons"); 
     getOperand.addEventListener("click",(e)=>{
         let target = e.target; 
@@ -148,7 +141,6 @@ getNum.addEventListener("click",(e)=>{
                 num1[0]=0; 
                 displayNumber.textContent = num1; 
             }
-            
             break; 
 
             case "plus": 
