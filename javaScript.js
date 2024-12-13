@@ -1,5 +1,4 @@
 //to do 
-//evaluate on operand press 
 //operand toggle
 
 
@@ -144,44 +143,94 @@ getNum.addEventListener("click",(e)=>{
             break; 
 
             case "plus": 
-            operand = "plus"; 
+
+            if (operand!="" && numForArg!=0){
+                numForArg2 = num1.slice().join("")
+                displayNum = Number(operate(numForArg,numForArg2,operand)); 
+                displayNumber.textContent = Math.round((displayNum+Number.EPSILON)*100)/100;
+                numForArg = displayNum; 
+                num1.splice(0,num1.length);
+
+
+            }
+            else {
             numForArg = num1.slice().join(""); 
             num1.splice(0,num1.length);
+            }
+            operand = "plus"; 
+
             break; 
             
             case "minus": 
-            operand = "minus";
+
+            if (operand!="" && numForArg!=0){
+                numForArg2 = num1.slice().join("")
+                displayNum = Number(operate(numForArg,numForArg2,operand)); 
+                displayNumber.textContent = Math.round((displayNum+Number.EPSILON)*100)/100;
+                numForArg = displayNum; 
+                num1.splice(0,num1.length);
+
+            }
+            else {
             numForArg = num1.slice().join(""); 
             num1.splice(0,num1.length);
+            }
+            operand = "minus";
+
             break;  
 
             case "multiply": 
-            operand = "multiply"; 
+
+            if (operand!="" && numForArg!=0){
+                numForArg2 = num1.slice().join("")
+                displayNum = Number(operate(numForArg,numForArg2,operand)); 
+                displayNumber.textContent = Math.round((displayNum+Number.EPSILON)*100)/100;
+                numForArg = displayNum; 
+                num1.splice(0,num1.length);
+
+
+            }
+            else{
             numForArg = num1.slice().join(""); 
             num1.splice(0,num1.length);
+            }    
+            operand = "multiply"; 
+
             break; 
 
             case "divide": 
-            operand = "divide"; 
+
+            if (operand!="" && numForArg!=0){
+                numForArg2 = num1.slice().join("")
+                displayNum = Number(operate(numForArg,numForArg2,operand)); 
+                displayNumber.textContent = Math.round((displayNum+Number.EPSILON)*100)/100;
+                numForArg = displayNum; 
+                num1.splice(0,num1.length);
+
+
+            }
+            else {
             numForArg = num1.slice().join("");  
             num1.splice(0,num1.length);
+            }
+            operand = "divide"; 
+
             break; 
 
             case"equal": 
-                //if (displayNum==0){
+                if (displayNum==0){
                     numForArg2 = num1.slice().join("");
                     displayNum = operate(numForArg,numForArg2,operand); 
                     numForArg = 0; 
                     numForArg2 = 0; 
                     num1.splice(0,num1.length); 
                     displayNumber.textContent = Math.round((displayNum+Number.EPSILON)*100)/100;  
-               // }
-                //else if (displayNum!=0){
-               //     numForArg2 = num1.slice().join("");
-               //     num1.splice(0,num1.length); 
-               //     displayNum = Number(operate(displayNum,numForArg2,operand)); 
-                //    displayNumber.textContent = Math.round((displayNum+Number.EPSILON)*100)/100;  
-
+                }
+                else if (displayNum!=0){
+                    numForArg2 = num1.slice().join("");
+                    num1.splice(0,num1.length); 
+                    displayNum = Number(operate(displayNum,numForArg2,operand)); 
+                    displayNumber.textContent = Math.round((displayNum+Number.EPSILON)*100)/100;
                 }
 
         }}); 
