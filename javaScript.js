@@ -1,8 +1,7 @@
 //to do 
-//divide by zero alert 
-// disable more than one floating point 
+//operand toggle
 //undo button 
-//key listener 
+
 
 let num1 = []; 
 let numForArg = 0;
@@ -21,7 +20,12 @@ function subNum(arg1,arg2){
 }
 
 function divNum(arg1,arg2){
-    return arg1/arg2; 
+    if (arg2==0){
+        return NaN; 
+    }
+    else{
+        return arg1/arg2; 
+    }
 }
 
 function multNum(arg1,arg2){
@@ -106,9 +110,11 @@ getNum.addEventListener("click",(e)=>{
 
         else if (target.id=="point"){
 
-            
+            if (num1.includes(".")==0){
                 num1.push("."); 
                 displayNumber.textContent = num1.join(""); 
+            }
+           
         }
         }); 
 
@@ -122,10 +128,29 @@ getNum.addEventListener("click",(e)=>{
         operand = ""
     }); 
 
+
+    var plusButton = document.querySelector("#plus")
+    var minusButton = document.querySelector("#minus")
+    var multButton = document.querySelector("#multiply")
+    var divButton = document.querySelector("divide");
+
+    
     let getOperand = document.querySelector("#calcOperateButtons"); 
     getOperand.addEventListener("click",(e)=>{
         let target = e.target; 
         switch(target.id){
+            case "undo":
+            if (num1.length>1){
+                num1.pop(); 
+                displayNumber.textContent = num1.join("");
+            }  
+            else if (num1.length==1){
+                num1[0]=0; 
+                displayNumber.textContent = num1; 
+            }
+            
+            break; 
+
             case "plus": 
             operand = "plus"; 
             numForArg = num1.slice().join(""); 
