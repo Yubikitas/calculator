@@ -168,20 +168,19 @@ getNum.addEventListener("click",(e)=>{
             break; 
 
             case"equal": 
-                if (displayNum==0){
+                //if (displayNum==0){
                     numForArg2 = num1.slice().join("");
                     displayNum = operate(numForArg,numForArg2,operand); 
                     numForArg = 0; 
                     numForArg2 = 0; 
                     num1.splice(0,num1.length); 
                     displayNumber.textContent = Math.round((displayNum+Number.EPSILON)*100)/100;  
-                }
-                else if (displayNum!=0){
-                    numForArg2 = num1.slice().join("");
-                    num1.splice(0,num1.length); 
-                    console.log(displayNum); 
-                    displayNum = Number(operate(displayNum,numForArg2,operand)); 
-                    displayNumber.textContent = Math.round((displayNum+Number.EPSILON)*100)/100;  
+               // }
+                //else if (displayNum!=0){
+               //     numForArg2 = num1.slice().join("");
+               //     num1.splice(0,num1.length); 
+               //     displayNum = Number(operate(displayNum,numForArg2,operand)); 
+                //    displayNumber.textContent = Math.round((displayNum+Number.EPSILON)*100)/100;  
 
                 }
 
