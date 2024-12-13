@@ -1,5 +1,4 @@
 //to do 
-//display number overflow (replicate by dividing) - rounding of answers 
 //divide by zero alert 
 // disable more than one floating point 
 //undo button 
@@ -107,8 +106,9 @@ getNum.addEventListener("click",(e)=>{
 
         else if (target.id=="point"){
 
-            num1.push("."); 
-            displayNumber.textContent = num1.join(""); 
+            
+                num1.push("."); 
+                displayNumber.textContent = num1.join(""); 
         }
         }); 
 
@@ -157,14 +157,14 @@ getNum.addEventListener("click",(e)=>{
                     numForArg = 0; 
                     numForArg2 = 0; 
                     num1.splice(0,num1.length); 
-                    displayNumber.textContent = displayNum;
+                    displayNumber.textContent = Math.round((displayNum+Number.EPSILON)*100)/100;  
                 }
                 else if (displayNum!=0){
                     numForArg2 = num1.slice().join("");
                     num1.splice(0,num1.length); 
                     console.log(displayNum); 
-                    displayNum = operate(displayNum,numForArg2,operand)
-                    displayNumber.textContent = displayNum; 
+                    displayNum = Number(operate(displayNum,numForArg2,operand)); 
+                    displayNumber.textContent = Math.round((displayNum+Number.EPSILON)*100)/100;  
 
                 }
 
