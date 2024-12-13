@@ -235,5 +235,3 @@ getNum.addEventListener("click",(e)=>{
 
         }}); 
 
-            
-    
